@@ -1,0 +1,22 @@
+{
+  "name": "tslint-plugin-blank-line",
+  "version": "0.0.6",
+  "description": "",
+  "main": "rules/index.js",
+  "scripts": {
+    "publish_npmjs": "tsc && npm set registry=https://registry.npmjs.com && npm publish && npm set registry=https://registry.npm.taobao.org"
+  },
+  "author": "wangwei",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xbdtb/tslint-plugin-blank-line.git"
+  },
+  "devDependencies": {
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.2"
+  },
+  "dependencies": {
+    "@types/node": "^8.0.28"
+  }
+}
