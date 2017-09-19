@@ -13,7 +13,7 @@ tslint.json
   ...,
   rules: [
     ...,
-    "blank-line/blank-line": "error",
+    "blank-line": true,
     ...
   ],
   ...
