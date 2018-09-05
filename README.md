@@ -91,3 +91,26 @@ class A {
   }
 }
 ```
+## Options
+### Ignore import statements
+```
+...,
+  rules: [
+    ...,
+    "blank-line": [true, "ignore-imports"],
+    ...
+  ],
+  ...
+  
+```
+This option disables the rule in import statements. This is helpful if you have multiline named import statements e.g.
+```
+import { A } from "libA";
+import { 
+  firstLongName,
+  secondEvenLongerName,
+  thirdNameThatIsTheLongest
+} from "libB";
+import { C } from "libC";
+```
+By default this is flagged as rule violation.

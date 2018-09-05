@@ -16,7 +16,10 @@ function visitNode(walker: tslint.RuleWalker, sourceFile: ts.SourceFile, prev: t
 
   const source = sourceFile.text.substr(node.getStart(), node.getEnd() - node.getStart());
 
-  if (node.kind !== 1 && prev) {
+  if (node.kind !== ts.SyntaxKind.EndOfFileToken && prev) {
+    if (walker.hasOption("ignore-imports") && node.kind === ts.SyntaxKind.ImportDeclaration && prev.kind === ts.SyntaxKind.ImportDeclaration) {
+      return;
+    }
     let nodeBeginPosIncludeComment = node.getStart();
     const comments = ts.getLeadingCommentRanges(sourceFile.text, node.pos) || [];
     if (comments.length > 0) {
